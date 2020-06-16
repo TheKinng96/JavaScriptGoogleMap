@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Weather</title>
+</head>
+<body>
+<!-- header -->
+  <header>
+    <h2>Post Code: </h2>
+    <input type="text" id="postcode">
+    <button id="postcode-submit">Submit</button>
+  </header>
+<!-- header end -->
+
+<!-- body -->
+  <section class="weather">
+    <h1>Tokyo, Shinjuku City, Shinjuku-ku</h1>
+    <h4>3-days forecast</h4>
+    <div class="forecast-container">
+      <div class="forecast">
+        <div class="img-container">
+          <img src="./media/sun.png" alt="#" width="100px" height="100px">
+        </div>
+        <div class="weatehr-info">
+          <div class="date-info">
+            <h4 class="date">2020-06-16</h4>
+            <h4 class="day">Tues</h4>
+          </div>
+          <div class="weather">Sunny</div>
+          <div class="max-min">
+            <h4 class="max">Max: 35</h4>
+            <h4 class="min">Min: 30</h4>
+          </div>
+        </div>
+      </div>
+      <div class="forecast">
+        <div class="img-container">
+          <img src="./media/sun.png" alt="#" width="100px" height="100px">
+        </div>
+        <div class="weatehr-info">
+          <div class="date-info">
+            <h4 class="date">2020-06-16</h4>
+            <h4 class="day">Tues</h4>
+          </div>
+          <div class="weather">Sunny</div>
+          <div class="max-min">
+            <h4 class="max">Max: 35</h4>
+            <h4 class="min">Min: 30</h4>
+          </div>
+        </div>
+      </div>
+      <div class="forecast">
+        <div class="img-container">
+          <img src="./media/sun.png" alt="#" width="100px" height="100px">
+        </div>
+        <div class="weatehr-info">
+          <div class="date-info">
+            <h4 class="date">2020-06-16</h4>
+            <h4 class="day">Tues</h4>
+          </div>
+          <div class="weather">Sunny</div>
+          <div class="max-min">
+            <h4 class="max">Max: 35</h4>
+            <h4 class="min">Min: 30</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- body end -->
+
+<!-- map -->
+<section class="map">
+  <div class="google-map-container">
+    <h4>Map</h4>
+    <div class="map-container">
+      <div id="map" />
+    </div>
+  </div>
+  <div class="free-space"></div>
+</section>
+<!-- map end -->
+
+  
+  <script src="script.js"></script>
+</body>
+</html>
