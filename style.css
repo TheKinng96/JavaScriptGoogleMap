@@ -1,34 +1,30 @@
 * {
   font-family: 'Sriracha', cursive;
-  margin: 0 auto;
-  padding: 0;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto 90% auto;
+  grid-template-rows: 7% 41% 49%;
   height: 100vh;
   width: 100vw;
-}
-
-section {
-  width: 80vw;
 }
 
 /* header */
 header {
   display: flex;
   flex-direction: row;
-  height: 7.5%;
-  width: 80%;
   justify-content: center;
   align-items: center;
+  grid-column: 2/3;
+  grid-row: 1/2;
 }
 
 header input {
   width: 50%;
   padding-left: 10px;
   height: 2rem;
+  margin: 0 10px;
 }
 
 header input::placeholder {
@@ -46,70 +42,80 @@ header button {
 
 /* body */
 .weather-container {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  height: 40%;
+  grid-column: 2/3;
+  grid-row: 2/3;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 30% 70%;
 }
 
 .address {
-  width: 100%;
-  margin-bottom: 10px;
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding-left: 20px;
 }
-
 .address h1 {
+  margin: 0;
   font-size: 3rem;
 }
-
 .address h4 {
+  margin: 0;
   font-size: 1.5rem;
 }
 
 .forecast-container {
+  grid-column: 1/-1;
+  grid-row: 2/-1;
   display: flex;
-  width: 100%;
   justify-content: space-around;
   align-items: center;
-  
 }
 
 .forecast {
   border: 1px black solid;
   width: 25%;
-  height: 28vh;
   display: flex;
   flex-direction: column;
 }
 
 .img-container {
-  width: 80%;
-  height: 80%;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
 .img-container img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+  object-position: center;
 }
 
 .weather-info {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 14vh;
+  padding: auto;
+}
+.weather-info h4 {
+  margin: 0;
 }
 
 .date-info, .max-min {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  margin: 0 10px;
 }
 
 .weather {
   font-size: 1.75rem;
   font-weight: bold;
+  margin: 0 auto;
 }
 
 
@@ -117,25 +123,29 @@ header button {
 
 /* map */
 .map {
-  height: 48%;
-  width: 80%;
-  display: flex;
-  flex-direction: row;
+  grid-column: 2/3;
+  grid-row: 3/-1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
 }
 
 .google-map-container h4 {
-  padding-left: 5px;
+  margin: 0 0 0 30px;
+  font-size: 1.5rem;
 }
 
 .map-container {
-  height: 38vh;
-  width: 38vw;
+  width: 85%;
+  height: 85%;
+  margin: auto;
   background-color: green;
 }
 
 .free-space {
   height: 41vh;
   width: 38vw;
+  margin: auto;
   background-color: green;
 }
 /* map end */
