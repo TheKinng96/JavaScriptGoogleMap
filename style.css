@@ -151,10 +151,12 @@ header button {
   height: 100%;
 }
 
-.free-space {
+.free-space-container {
   height: 41vh;
   width: 38vw;
   margin: auto;
-  background-color: green;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 /* map end */

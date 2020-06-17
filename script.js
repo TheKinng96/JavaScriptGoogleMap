@@ -30,7 +30,6 @@ const searchZipcode = () => {
     // console.log(filtered)
     showWeatherForecast(filtered,response);
     initMap(response);
-    showNewLocation(response);
   }).catch ((err)=>{
     console.log(err)
   })
@@ -87,7 +86,6 @@ const initMap = (response) => {
       map: map,
       title: response.city.name
     });
-    showNewLocation(response);
   }
 }
 

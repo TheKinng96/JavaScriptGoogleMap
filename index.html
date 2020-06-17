@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
-
+  <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
   <title>Weather</title>
 </head>
 <body>
@@ -37,12 +37,36 @@
         <div id="map" ></div>
       </div>
     </div>
-    <div class="free-space">hey</div>
+    <div class="free-space-container">
+      <div id="free-space">
+        <div class="transport">
+          <a href="#"><i class="fas fa-walking"></i></a>
+          <a href="#"><i class="fas fa-car"></i></a>
+          <a href="#"><i class="fas fa-subway"></i></a>
+        </div>
+        <div class="trip">
+          <a href="#"><i class="fab fa-tripadvisor"></i></a>
+          <a href="!#"><img src="https://images-fe.ssl-images-amazon.com/images/I/51jqKKnVcVL.png" alt="#" height="100px" width="100px"></a>
+          <a href="#"><i class="fas fa-utensils"></i></a>
+        </div>
+        <div class="social">
+          <div class="line-it-button" data-lang="en" data-type="share-b" data-ver="3" data-url="http://hihi.com" data-color="default" data-size="small" data-count="false" style="display: none;"></div>
+          <div class="fb-share-button" data-href="here to share" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+          <a class="twitter-share-button"
+            href="https://twitter.com/intent/tweet?text=Hello%20world"
+            data-size="large">
+            <i class="fab fa-twitter-square"></i></a>
+        </div>
+
+      </div>
+    </div>
   </section>
 <!-- map end -->
-<script src="script.js"></script>
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL4-QNF9PAPzxxDQJ5DRDOHuAEwNKP5mo&callback=initMap">
-    </script>
+  <script src="script.js"></script>
+  <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL4-QNF9PAPzxxDQJ5DRDOHuAEwNKP5mo&callback=initMap">
+      </script>
+  <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0&appId=2968241299932856&autoLogAppEvents=1" nonce="xgJCgLo6"></script>
 </body>
 </html>
