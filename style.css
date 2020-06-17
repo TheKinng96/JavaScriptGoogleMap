@@ -128,7 +128,7 @@ header button {
 /* body end */
 
 /* map */
-.map {
+.map-container-main {
   grid-column: 2/3;
   grid-row: 3/-1;
   display: grid;
@@ -145,7 +145,10 @@ header button {
   width: 85%;
   height: 85%;
   margin: auto;
-  background-color: green;
+}
+
+#map {
+  height: 100%;
 }
 
 .free-space {

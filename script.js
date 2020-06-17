@@ -1,5 +1,9 @@
 // @ts-nocheck
 
+window.onload = () => {
+  initMap();
+}
+
 // weather
 let API_KEY = "a8e71c9932b20c4ceb0aed183e6a83bb";
 
@@ -25,6 +29,8 @@ const searchZipcode = () => {
     filtered.push(response.list[17])
     // console.log(filtered)
     showWeatherForecast(filtered,response);
+    initMap(response);
+    showNewLocation(response);
   }).catch ((err)=>{
     console.log(err)
   })
@@ -57,5 +63,31 @@ const showWeatherForecast = (filtered,response) => {
   })
   document.getElementById('city-name').innerHTML = response.city.name + ', ' + response.city.country
   document.querySelector('.forecast-container').innerHTML = weatherHtml;
+}
+
+const initMap = (response) => {
+
+  if (!response) {
+    const map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: 35.6938, lng: 139.7034 },
+      zoom: 11,
+      disableDefaultUI: true,
+    });
+  } else {
+    const myLatLng = { lat: response.city.coord.lat, lng: response.city.coord.lon }
+
+    const map = new google.maps.Map(document.getElementById("map"), {
+      center: myLatLng,
+      zoom: 11,
+      disableDefaultUI: true,
+    });
+
+    const marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      title: response.city.name
+    });
+    showNewLocation(response);
+  }
 }
 
