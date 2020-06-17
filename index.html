@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet">
+
   <title>Weather</title>
 </head>
 <body>
@@ -12,14 +13,14 @@
   <header>
     <h2>Post Code: </h2>
     <input type="text" id="postcode" placeholder="Enter Post Code">
-    <button id="postcode-submit">Submit</button>
+    <button id="postcode-submit" type="button" onclick="searchZipcode()">Submit</button>
   </header>
 <!-- header end -->
 
 <!-- body -->
   <section class="weather-container">
     <div class="address">
-      <h1>Tokyo, Shinjuku City, Shinjuku-ku</h1>
+      <h1 id="city-name">Tokyo, Shinjuku City, Shinjuku-ku</h1>
       <h4>3-days forecast</h4>
     </div>
     <div class="forecast-container">
@@ -86,8 +87,6 @@
     <div class="free-space">hey</div>
   </section>
 <!-- map end -->
-
-  
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
