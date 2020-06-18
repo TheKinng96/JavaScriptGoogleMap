@@ -47,7 +47,7 @@ const searchZipcode = () => {
 
 const showWeatherForecast = (filtered,response) => {
   let weatherHtml = '';
-  let allDays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  let allDays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   let months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   filtered.map((i, index) => {
     weatherHtml += `
@@ -71,7 +71,7 @@ const showWeatherForecast = (filtered,response) => {
   })
 
   let newLink = `
-    <div class="free">Let's go</div>
+    <h4>Let's go</h4>
     <div id="free-space">
       <a href="https://www.google.co.jp/maps/dir//${response.city.name}/@${response.city.coord.lat},${response.city.coord.lon}/data=!4m2!4m1!3e2"><i class="fas fa-walking"></i></a>
       <a href="https://www.google.co.jp/maps/dir//${response.city.name}/@${response.city.coord.lat},${response.city.coord.lon}/data=!4m2!4m1!3e0" class="car"><i class="fas fa-car"></i></a>

@@ -17,8 +17,6 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-
-
 /* header */
 header {
   display: flex;
@@ -29,11 +27,16 @@ header {
   grid-row: 1/2;
 }
 
+header h2 {
+  margin: 0;
+}
+
 header input {
   width: 50%;
   padding-left: 10px;
   height: 1.5rem;
   margin: 0 10px;
+  border: none;
 }
 
 header input::placeholder {
@@ -189,7 +192,7 @@ header button {
   justify-items: center;
 }
 
-#free-space a, #free-space div {
+#free-space a {
   margin: 5px;
   text-decoration: none;
   font-size: 3rem;
@@ -205,10 +208,140 @@ header button {
   transition: ease-in 0.2s;
 }
 
-#free-space a:hover, #free-space div:hover {
+#free-space a:hover{
   color: white;
   background-color: red;
 }
 
-
 /* map end */
+/* responsiveness */
+@media (max-width:768px) {
+  header h2 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 414px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  header {
+    display: flex;
+    flex-direction: column;
+    margin: 25px auto
+  }
+
+  header h2 {
+    font-size: 3rem;
+  }
+
+  header input {
+    width: 80%;
+    height: auto;
+    margin: 10px auto;
+    font-size: 2rem;
+    border-radius: 5px;
+  }
+
+  header button {
+    margin-top: 10px auto;
+    width: 70%;
+    height: auto;
+    font-size: 2rem;
+  }
+
+  .weather-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #city-name {
+    font-size: 3.5rem;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .before h4{
+    font-size: 2rem;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .address h4 {
+    font-size: 2rem;
+    top: 70px;
+  }
+
+  .forecast-container {
+    display:flex;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  .forecast {
+    margin-bottom: 40px;
+    width: 80%;
+    height: 350px;
+    background-color: rgb(253, 176, 176);
+  }
+
+  .img-container {
+    width: 150px;
+    height: 150px;
+    margin: 10px auto;
+    background-color: rgb(214, 214, 214);
+  }
+
+  .date-info, .max-min {
+    font-size: 1.5rem;
+  }
+
+  .weather {
+    font-size: 3rem;
+    margin: 5px auto;
+  }
+
+  .map-container-main {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .google-map-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .google-map-container h4 {
+    margin: 0 auto 10px auto;
+    font-size: 3rem;
+  }
+
+  .map-container {
+    width: 95%;
+    height: 400px;
+  }
+
+  .free-space-container {
+    margin-top: 20px;
+  }
+
+  .free-space-container h4 {
+    font-size: 3rem;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  #free-space a {
+    color: white;
+    background-color:royalblue;
+  }
+}
+
+@media (max-width: 375px) {
+  .address h4 {
+    top: 175px;
+  }
+}
