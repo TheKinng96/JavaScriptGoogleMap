@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // @ts-nocheck
 
 window.onload = () => {
