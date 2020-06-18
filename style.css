@@ -5,11 +5,19 @@
 body {
   display: grid;
   grid-template-columns: auto 90% auto;
-  grid-template-rows: 7% 41% 49%;
+  grid-template-rows: 6% 41% 49%;
   height: 100vh;
   width: 100vw;
   background: linear-gradient(#fbfcba, #9198e5);
+  margin: 0;
+  -ms-overflow-style: none;
 }
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
 
 /* header */
 header {
@@ -24,7 +32,7 @@ header {
 header input {
   width: 50%;
   padding-left: 10px;
-  height: 2rem;
+  height: 1.5rem;
   margin: 0 10px;
 }
 
@@ -37,7 +45,7 @@ header button {
   background-color: royalblue;
   color: white;
   border-radius: 7px;
-  font-size: 1.2rem;
+  font-size: 1rem;
   cursor: pointer;
 }
 /* header end */
@@ -61,8 +69,9 @@ header button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   padding-left: 20px;
+  position: relative;
 }
 .address h1 {
   margin: 0;
@@ -70,7 +79,9 @@ header button {
 }
 .address h4 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 55px;
 }
 
 .forecast-container {
@@ -87,7 +98,7 @@ header button {
   display: flex;
   flex-direction: column;
   background-color: lightgray;
-  transition: ease-in-out 0.2s;
+  transition: ease-in-out 0.3s;
 }
 
 .forecast:hover, .forecast:hover .img-container {
@@ -95,10 +106,10 @@ header button {
 }
 
 .img-container {
-  width: 125px;
-  height: 125px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  margin: 5px auto;
+  margin: 0 auto;
   background-color: rgb(146, 146, 146);
 }
 
@@ -126,7 +137,7 @@ header button {
 }
 
 .weather {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: bold;
   margin: 0 auto;
 }
@@ -174,7 +185,7 @@ header button {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  margin:20px auto;
+  margin:10px auto;
   justify-items: center;
 }
 
