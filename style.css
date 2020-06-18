@@ -344,4 +344,8 @@ header button {
   .address h4 {
     top: 175px;
   }
+
+  .before {
+    background-color: #fff;
+  }
 }
