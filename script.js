@@ -60,8 +60,28 @@ const showWeatherForecast = (filtered,response) => {
       </div>
     `;
   })
+
+  let newLink = `
+    <div class="free">Let's go</div>
+    <div id="free-space">
+      <a href="https://www.google.co.jp/maps/dir//${response.city.name}/@${response.city.coord.lat},${response.city.coord.lon}/data=!4m2!4m1!3e2"><i class="fas fa-walking"></i></a>
+      <a href="https://www.google.co.jp/maps/dir//${response.city.name}/@${response.city.coord.lat},${response.city.coord.lon}/data=!4m2!4m1!3e0" class="car"><i class="fas fa-car"></i></a>
+      <a href="https://www.google.co.jp/maps/dir//${response.city.name}/@${response.city.coord.lat},${response.city.coord.lon}/data=!4m2!4m1!3e3"><i class="fas fa-subway"></i></a>
+      <a href="https://www.tripadvisor.com/Search?q=${response.city.name}"><i class="fab fa-tripadvisor"></i></a>
+      <a href="https://www.booking.com/searchresults.en-gb.html?label=gen173nr-1FCAEoggI46AdIM1gEaHWIAQGYAQm4ARfIAQzYAQHoAQH4AQuIAgGoAgO4Ar6tqPcFwAIB0gIkMDFkZWQ4YWUtZGRmNS00Y2QxLWIwZjEtMGYxMTlhMDI3Y2Mz2AIG4AIB&sid=b6e90b8429233c9ab0cd383ab0af44bf&sb=1&sb_lp=1&src=index&src_elem=sb&error_url=https%3A%2F%2Fwww.booking.com%2Findex.en-gb.html%3Flabel%3Dgen173nr-1FCAEoggI46AdIM1gEaHWIAQGYAQm4ARfIAQzYAQHoAQH4AQuIAgGoAgO4Ar6tqPcFwAIB0gIkMDFkZWQ4YWUtZGRmNS00Y2QxLWIwZjEtMGYxMTlhMDI3Y2Mz2AIG4AIB%3Bsid%3Db6e90b8429233c9ab0cd383ab0af44bf%3Bsb_price_type%3Dtotal%3Bsrpvid%3Df9f02dea561c012b%26%3B&ss=${response.city.name}&is_ski_area=0&ssne=Tangimachi&ssne_untouched=Tangimachi&checkin_year=&checkin_month=&checkout_year=&checkout_month=&group_adults=2&group_children=0&no_rooms=1&b_h4u_keep_filters=&from_sf=1&ss_raw=shinu&dest_id=&dest_type=&search_pageview_id=76032f0dbf0e0112&search_selected=false"><i class="fas fa-bed"></i></a>
+      <a href="https://tabelog.com/en/rstLst/?n=${response.city.name}&maxLat=${response.city.coord.lat}&minLat=${response.city.coord.lat-0.314265}&maxLon=${response.city.coord.lon}&minLon=${response.city.coord.lon-0.314265}&lat=${response.city.coord.lat}&lon=${response.city.coord.lon}&zoom=15"><i class="fas fa-utensils"></i></a>
+      <a href="#"><div class="line-it-button" data-lang="en" data-type="share-b" data-ver="3" data-url="http://hihi.com"  data-size="large" data-count="false" ></div></a>
+      <div class="fb-share-button" data-href="here to share" data-layout="button" data-size="large"> <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore"></a></div>
+      <a class="twitter-share-button"
+        href="https://twitter.com/intent/tweet?text=Hello%20world"
+        data-size="large">
+        <i class="fab fa-twitter-square"></i></a>
+    </div>
+  `
+
   document.getElementById('city-name').innerHTML = response.city.name + ', ' + response.city.country
   document.querySelector('.forecast-container').innerHTML = weatherHtml;
+  document.querySelector('.free-space-container').innerHTML = newLink;
 }
 
 const initMap = (response) => {

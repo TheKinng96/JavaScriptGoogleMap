@@ -8,6 +8,7 @@ body {
   grid-template-rows: 7% 41% 49%;
   height: 100vh;
   width: 100vw;
+  background: linear-gradient(#fbfcba, #9198e5);
 }
 
 /* header */
@@ -37,6 +38,7 @@ header button {
   color: white;
   border-radius: 7px;
   font-size: 1.2rem;
+  cursor: pointer;
 }
 /* header end */
 
@@ -85,6 +87,11 @@ header button {
   display: flex;
   flex-direction: column;
   background-color: lightgray;
+  transition: ease-in-out 0.2s;
+}
+
+.forecast:hover, .forecast:hover .img-container {
+  background-color: rgb(253, 176, 176);
 }
 
 .img-container {
