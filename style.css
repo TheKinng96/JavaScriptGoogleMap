@@ -152,11 +152,45 @@ header button {
 }
 
 .free-space-container {
-  height: 41vh;
-  width: 38vw;
+  height: 100%;
+  width: 100%;
   margin: auto;
+
+}
+
+.free {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#free-space {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+  margin:20px auto;
+  justify-items: center;
 }
+
+#free-space a, #free-space div {
+  margin: 5px;
+  text-decoration: none;
+  font-size: 3rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: grey;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightgrey;
+  transition: ease-in 0.2s;
+}
+
+#free-space a:hover, #free-space div:hover {
+  color: white;
+  background-color: red;
+}
+
+
 /* map end */
