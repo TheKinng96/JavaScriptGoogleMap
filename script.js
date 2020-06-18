@@ -4,6 +4,15 @@ window.onload = () => {
   initMap();
 }
 
+const input = document.getElementById("postcode");
+
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+    event.preventDefault();
+    document.getElementById("postcode-submit").click();
+  }
+});
+
 // weather
 let API_KEY = "a8e71c9932b20c4ceb0aed183e6a83bb";
 
@@ -82,6 +91,7 @@ const showWeatherForecast = (filtered,response) => {
   document.getElementById('city-name').innerHTML = response.city.name + ', ' + response.city.country
   document.querySelector('.forecast-container').innerHTML = weatherHtml;
   document.querySelector('.free-space-container').innerHTML = newLink;
+  document.getElementById("postcode").value = '';
 }
 
 const initMap = (response) => {
