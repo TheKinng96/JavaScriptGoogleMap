@@ -29,7 +29,14 @@ const getWeatherData = (newPostCode) => {
 const searchZipcode = () => {
   const filtered = [];
   const postCode = document.getElementById("postcode").value;
-  const newPostCode = `${postCode.substring(0,3)}-${postCode.substring(3,8)}`
+  let newPostCode;
+  if (postCode.length == 7) {
+    newPostCode = `${postCode.substring(0,3)}-${postCode.substring(3,8)}`;
+  } else if (postCode.length == 8) {
+    newPostCode = postCode;
+  } else {
+    document.getElementById('city-name').innerHTML = "Please enter a valid Japan zip-code";
+  }
   // console.log(newPostCode)
   getWeatherData(newPostCode)
   .then((response) => {

@@ -346,6 +346,7 @@ header button {
   }
 
   .before {
+    z-index: 1;
     background-color: #fff;
   }
 }
