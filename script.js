@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // @ts-nocheck
 
 window.onload = () => {
@@ -125,4 +126,3 @@ const initMap = (response) => {
     });
   }
 }
-
