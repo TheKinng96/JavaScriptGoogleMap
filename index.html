@@ -1,1 +1,43 @@
-<!DOCTYPE html><html lang="en"><head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link rel="stylesheet" href="style.css"> <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet"> <script src="https://kit.fontawesome.com/c939d0e917.js"></script> <title>Weather</title></head><body> <header> <h2>Post Code: </h2> <input type="text" id="postcode" placeholder="Enter Post Code"> <button id="postcode-submit" type="button" onclick="searchZipcode()">Submit</button> </header> <section class="weather-container"> <div class="address"> <h1 id="city-name"></h1> <h4>3-days forecast</h4> </div><div class="forecast-container"> <div class="before"> <h4>Let me know the place in your mind ^^</h4></div></div></section> <section class="map-container-main"> <div class="google-map-container"> <h4>Map</h4> <div class="map-container"> <div id="map" ></div></div></div><div class="free-space-container"> <div class="free">Erm... What could I recommend to you?</div><img src="./media/wondering.png" alt="Let_me_guess" height="300px" width="300px"> </div></section> <script src="script.js"></script> <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL4-QNF9PAPzxxDQJ5DRDOHuAEwNKP5mo&callback=initMap"> </script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha&display=swap" rel="stylesheet"> 
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script> <title>Weather</title>
+  </head>
+  <body> 
+    <header> 
+      <h2>Post Code: </h2> 
+      <input type="text" id="postcode" placeholder="Enter Post Code"> 
+      <button id="postcode-submit" type="button" onclick="searchZipcode()">Submit</button> 
+    </header> 
+    <section class="weather-container"> 
+      <div class="address"> 
+        <h1 id="city-name"></h1> 
+        <h4>3-days forecast</h4> 
+      </div>
+      <div class="forecast-container"> 
+        <div class="before"> 
+          <h4>Let me know the place in your mind ^^</h4>
+        </div>
+      </div>
+    </section> 
+    <section class="map-container-main"> 
+      <div class="google-map-container"> 
+        <h4>Map</h4> 
+        <div class="map-container"> 
+          <div id="map" >
+
+          </div>
+        </div>
+      </div>
+      <div class="free-space-container"> 
+        <div class="free">Erm... What could I recommend to you?</div>
+        <img src="./media/wondering.png" alt="Let_me_guess" height="300px" width="300px"> 
+      </div>
+    </section> 
+    <script src="script.js"></script> 
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL4-QNF9PAPzxxDQJ5DRDOHuAEwNKP5mo&callback=initMap"> </script>
+  </body>
+</html>
