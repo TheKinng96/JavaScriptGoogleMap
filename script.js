@@ -9,6 +9,10 @@ let postCode;
 
 const input = document.getElementById("postcode");
 const errorMessage = document.getElementById('not');
+const smallTitle = document.querySelector(".address h4");
+const mainTitle = document.getElementById('city-name');
+const forContainer = document.querySelector('.forecast-container');
+const freeSpace = document.querySelector('.free-space-container');
 
 input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
@@ -31,15 +35,16 @@ const getWeatherData = (newPostCode) => {
 }
 
 const searchZipcode = () => {
+
   const filtered = [];
-  postCode = document.getElementById("postcode").value;
+  postCode = input.value;
 
   if (postCode.length == 7) {
     newPostCode = `${postCode.substring(0,3)}-${postCode.substring(3,8)}`;
   } else if (postCode.length == 8) {
     newPostCode = postCode;
   } else {
-    document.getElementById('city-name').innerHTML = "Please enter a valid Japan zip-code";
+    mainTitle.innerHTML = "";
   }
   // console.log(newPostCode)
   getWeatherData(newPostCode)
@@ -57,14 +62,15 @@ const searchZipcode = () => {
     
   }).catch ((err)=>{
     console.log(err)
-    if (err) {
+    if (postCode.length == 7 || postCode.length == 8 && postCode.includes('-')) {
       errorMessage.innerHTML = "It seems Japan does not have place with that zip... Try another please";
       errorMessage.style.visibility = 'visible';
       clearData();
     } else {
-      errorMessage.innerHTML = "";
-      errorMessage.style.visibility = 'hidden';
-    }
+      errorMessage.innerHTML = "Wrong zipCode format, try something like 1000001 or 100-0001";
+      errorMessage.style.visibility = 'visible';
+      clearData();
+    } 
     
   })
   return {newPostCode, postCode};
@@ -114,10 +120,12 @@ const showWeatherForecast = (filtered,response) => {
     </div>
   `
 
-  document.getElementById('city-name').innerHTML = response.city.name + ', ' + response.city.country
-  document.querySelector('.forecast-container').innerHTML = weatherHtml;
-  document.querySelector('.free-space-container').innerHTML = newLink;
-  document.getElementById("postcode").value = '';
+  mainTitle.innerHTML = response.city.name + ', ' + response.city.country;
+  forContainer.innerHTML = weatherHtml;
+  freeSpace.innerHTML = newLink;
+  input.value = '';
+  smallTitle.style.visibility = 'visible';
+  newPostCode = ''
 }
 
 const initMap = (response) => {
@@ -146,8 +154,9 @@ const initMap = (response) => {
 }
 
 const clearData =() =>{
-  document.getElementById('city-name').innerHTML = ''
-  document.querySelector('.forecast-container').innerHTML = '';
-  document.querySelector('.free-space-container').innerHTML = '';
-  document.getElementById("postcode").value = '';
+  mainTitle.innerHTML = '';
+  forContainer.innerHTML = '';
+  freeSpace.innerHTML = '';
+  input.value = '';
+  smallTitle.style.visibility = 'visible'
 }
