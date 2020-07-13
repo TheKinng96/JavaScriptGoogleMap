@@ -54,6 +54,22 @@ header button {
 /* header end */
 
 /* body */
+#not {
+  border: 2px solid whitesmoke;
+  position: absolute;
+  background-color: whitesmoke;
+  overflow: hidden;
+  height: 100%;
+  z-index: 1;
+  border-radius: 10px;
+  font-size: 20px;
+  padding: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
 .weather-container {
   grid-column: 2/3;
   grid-row: 2/3;
@@ -85,6 +101,7 @@ header button {
   font-size: 1.2rem;
   position: absolute;
   top: 55px;
+  visibility: hidden;
 }
 
 .forecast-container {

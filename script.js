@@ -8,6 +8,7 @@ let newPostCode;
 let postCode;
 
 const input = document.getElementById("postcode");
+const errorMessage = document.getElementById('not');
 
 input.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
@@ -43,15 +44,28 @@ const searchZipcode = () => {
   // console.log(newPostCode)
   getWeatherData(newPostCode)
   .then((response) => {
+
     filtered.push(response.list[1])
     filtered.push(response.list[9])
     filtered.push(response.list[17])
     // console.log(filtered)
-    console.log(response)
+    // console.log(response)
+
     showWeatherForecast(filtered,response);
     initMap(response);
+    errorMessage.style.visibility = 'hidden';
+    
   }).catch ((err)=>{
     console.log(err)
+    if (err) {
+      errorMessage.innerHTML = "It seems Japan does not have place with that zip... Try another please";
+      errorMessage.style.visibility = 'visible';
+      clearData();
+    } else {
+      errorMessage.innerHTML = "";
+      errorMessage.style.visibility = 'hidden';
+    }
+    
   })
   return {newPostCode, postCode};
 }
@@ -129,4 +143,11 @@ const initMap = (response) => {
       title: response.city.name
     });
   }
+}
+
+const clearData =() =>{
+  document.getElementById('city-name').innerHTML = ''
+  document.querySelector('.forecast-container').innerHTML = '';
+  document.querySelector('.free-space-container').innerHTML = '';
+  document.getElementById("postcode").value = '';
 }
